@@ -1,6 +1,6 @@
 {
   "manifest_version": 2,
-  "version": "2.3.0",
+  "version": "2.3.1",
   "name": "Skiovox Helper",
   "description": "A helper for the Skiovox exploit -- read more at skiovox.com",
   "icons": {
@@ -70,6 +70,9 @@
     },
     "CTRL_9": {
       "description": "Ctrl+9"
+    },
+    "VIEW_SOURCE": {
+      "description": "Ctrl+U"
     }
   },
   "background": {
