@@ -1,4 +1,4 @@
-# Skiovox Helper- this fork is broken, allow me to fix later.
+# Skiovox Helper
 ### The helper extension for the Skiovox exploit.
 
 ## Install
