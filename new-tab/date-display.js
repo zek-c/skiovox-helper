@@ -11,7 +11,6 @@ class DateDisplay {
 
     render() { 
        let date = new Date()
-        this.element.textContent = date.toLocaleTimeString([], { hour12: false });
        this.element.textContent = [
            date.getMonth() + 1,
            date.getDate(),
