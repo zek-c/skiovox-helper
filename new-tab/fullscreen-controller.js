@@ -1,48 +1,32 @@
 class FullscreenController {
   constructor(element) {
-    element.addEventListener('click', this.onClicked.bind(this));
-
-    this.icons = Array.from(element.children);
-    this.showProperIcon()
+    document.addEventListener('keydown', this.onKeyDown.bind(this));
   }
 
-  async onClicked() {
-    if (await this.getFullscreen()) {
-      this.showIcon(0)
-      this.setFullscreen(false);
-    } else {
-      this.showIcon(1)
-      this.setFullscreen(true);
+  async onKeyDown(event) {
+    if (event.key === 'F3') {
+      const isFullscreen = await this.getFullscreen();
+      this.setFullscreen(!isFullscreen);
     }
-  }
-
-  async showProperIcon() {
-    let index = await this.getFullscreen() ? 1 : 0
-    this.showIcon(index) // a bit repetitive
-  }
-
-  showIcon(index) {
-    this.icons.forEach(e => e.style.display = "none")
-    this.icons[index].style.display = "block"
   }
 
   setFullscreen(bool) {
     chrome.windows.getLastFocused((window) => {
-      let state = bool
+      const state = bool
         ? chrome.windows.WindowState.MAXIMIZED
-        : chrome.windows.WindowState.NORMAL
-      chrome.windows.update(window.id, { state })
-    })
+        : chrome.windows.WindowState.NORMAL;
+      chrome.windows.update(window.id, { state });
+    });
   }
 
-  getFullscreen() {
+  async getFullscreen() {
     return new Promise((resolve) => {
       chrome.windows.getLastFocused((window) => {
-        let bool = window.state === chrome.windows.WindowState.MAXIMIZED
-        resolve(bool)
-      })
-    })
+        const bool = window.state === chrome.windows.WindowState.MAXIMIZED;
+        resolve(bool);
+      });
+    });
   }
 }
 
-export { FullscreenController }
+export { FullscreenController };
