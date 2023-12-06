@@ -34,8 +34,7 @@ let date = document.querySelector('.date')
 let time = document.querySelector('.time')
 let battery = document.querySelector('.battery')
 
-version.textContent = "v" + chrome.runtime.getManifest().version
-
+version.textContent = ""
 wifi.addEventListener('click', () => {
     chrome.tabs.create({ url: WIFI_URL })
 })
