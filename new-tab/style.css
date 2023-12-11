@@ -18,10 +18,12 @@ body {
 
 .name {
   font-size: 22px;
+  display: none;
 }
 
 .version {
   font: bold 14px monospace;
+  display: none;
 }
 
 .icon-corner {
@@ -55,6 +57,7 @@ body {
   gap: 20px;
   text-align: center;
   transform: translate(-50%, -50%);
+  color: #cdd6f4;
 }
 
 .date {
