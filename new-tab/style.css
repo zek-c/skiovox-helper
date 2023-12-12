@@ -6,7 +6,7 @@
 body {
   padding: 8px;
   background: #1e1e2e;
-  color: #ffffff;
+  color: #cdd6f4;
 }
 
 .top-left {
@@ -17,12 +17,10 @@ body {
 
 .name {
   font-size: 22px;
-  display: none;
 }
 
 .version {
   font: bold 14px monospace;
-  display: none;
 }
 
 .icon-corner {
