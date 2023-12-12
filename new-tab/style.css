@@ -1,12 +1,12 @@
 * {
   font-family: "Noto sans", sans-serif;
   box-sizing: border-box;
-  color: rgb(205, 214, 244);
 }
 
 body {
   padding: 8px;
   background: #1e1e2e;
+  color: #ffffff;
 }
 
 .top-left {
